@@ -34,6 +34,12 @@ const Agence = () => {
         start: 'top 28%',
         end: 'top -70%',
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: 'transform',
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
@@ -47,8 +53,8 @@ const Agence = () => {
     });
   });
   return (
-    <div>
-      <div className='section1'>
+    <div className='parent'>
+      <div id='page1' className=' py-1'>
         <div
           ref={imageDivRef}
           className='absolute overflow-hidden rounded-3xl w-[15vw] top-96 left-[30vw] h-[20vw]'
